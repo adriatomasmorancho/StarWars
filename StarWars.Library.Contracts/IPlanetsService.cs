@@ -1,4 +1,6 @@
 ﻿using StarWars.Library.Contracts.DTOs;
+using System.Xml.Linq;
+using System;
 
 namespace StarWars.Library.Contracts
 {
@@ -6,6 +8,7 @@ namespace StarWars.Library.Contracts
     {
 
         Task<RefreshAndListPlanetNamesRsDto> RefreshPlanets();
+        Task<CreatePlanetRsDto> CreatePlanets(string name, int rotation, int period, string climate, string poblation, string url);
 
     }
 }

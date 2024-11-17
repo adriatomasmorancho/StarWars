@@ -1,4 +1,5 @@
-﻿using StarWars.Infrastructure.Contracts.EntitiesDB;
+﻿using Microsoft.EntityFrameworkCore.Migrations.Operations;
+using StarWars.Infrastructure.Contracts.EntitiesDB;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,5 +13,7 @@ namespace StarWars.Infrastructure.Contracts
         void InsertOrUpdate(List<Planet> dbEntityList);
 
         Planet? TryGet(string planetName);
+
+       void Insert(Planet dbEntity);
     }
 }

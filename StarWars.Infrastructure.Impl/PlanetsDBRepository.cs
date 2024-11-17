@@ -1,4 +1,5 @@
-﻿using StarWars.Infrastructure.Contracts;
+﻿using Microsoft.EntityFrameworkCore;
+using StarWars.Infrastructure.Contracts;
 using StarWars.Infrastructure.Contracts.EntitiesDB;
 using StarWars.Infrastructure.Impl.DbContext;
 using System;
@@ -17,6 +18,8 @@ namespace StarWars.Infrastructure.Impl
         {
             _swdbContext = swdbContext;
         }
+
+      
 
         public void InsertOrUpdate(List<Planet> dbEntityList)
         {
@@ -43,5 +46,13 @@ namespace StarWars.Infrastructure.Impl
         {
             return _swdbContext.Planets.FirstOrDefault(x => x.NombrePlaneta == planetName);
         }
+
+        public void Insert(Planet dbEntity)
+        {
+            _swdbContext.Planets.Add(dbEntity);  // Agregar el objeto al DbContext
+            _swdbContext.SaveChanges();
+        }
+
+
     }
 }

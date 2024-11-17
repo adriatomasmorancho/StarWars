@@ -20,6 +20,7 @@ namespace StarWars.Library.Impl
             _apiPlanetsRepository = apiPlanetsRepository;
             _dbPlanetsRepository = dbPlanetsRepository;
         }
+
         public async Task<RefreshAndListPlanetNamesRsDto> RefreshPlanets()
         {
             RefreshAndListPlanetNamesRsDto result = new();
@@ -64,6 +65,55 @@ namespace StarWars.Library.Impl
             }
 
             result.data = swapiEntityList.Select(x => x.Name).ToList();
+            return result;
+        }
+
+       
+
+       public async Task<CreatePlanetRsDto> CreatePlanets(string name, int rotation, int period, string climate, string poblation, string url)
+        {
+            CreatePlanetRsDto result = new();
+
+            Planet dbEntity = new();
+
+            dbEntity.NombrePlaneta = name;
+
+            dbEntity.Url = url;
+
+            dbEntity.RotacionOrbitalEnDiasAlderaanos = rotation;
+
+            dbEntity.PeriodoOrbitalEnHorasAlderaanas = period;
+
+            dbEntity.Clima = climate;
+
+            dbEntity.Poblacion = poblation;
+
+
+
+            // Comprovación si todos los datos son correctos
+
+            try
+            {
+                _dbPlanetsRepository.Insert(dbEntity);
+
+                result.NombrePlaneta = dbEntity.NombrePlaneta;
+
+                result.Url = dbEntity.Url;
+
+                result.RotacionOrbitalEnDiasAlderaanos = dbEntity.RotacionOrbitalEnDiasAlderaanos;
+
+                result.PeriodoOrbitalEnHorasAlderaanas = dbEntity.PeriodoOrbitalEnHorasAlderaanas;
+
+                result.Clima = dbEntity.Clima;
+
+                result.Poblacion = dbEntity.Poblacion;
+
+            }
+            catch (Exception)
+            {
+
+            }
+
             return result;
         }
     }

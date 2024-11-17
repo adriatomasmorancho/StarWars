@@ -40,6 +40,15 @@ namespace StarWars.DistributedServices.WebApiUI.Controllers
             };
         }
 
+        [HttpPost("CreatePlanet")]
+        public async Task<IActionResult> Create(string name, int rotation, int period, string climate, string poblation, string url)
+        {
+
+            CreatePlanetRsDto result = await _planetsService.CreatePlanets(name, rotation, period, climate, poblation, url);
+
+            return Ok(result);
+        }
+
 
     }
 }

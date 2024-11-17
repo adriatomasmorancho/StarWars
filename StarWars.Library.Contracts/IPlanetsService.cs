@@ -1,6 +1,6 @@
 ﻿namespace StarWars.Library.Contracts
 {
-    public class Class1
+    public interface IPlanetsService
     {
 
     }

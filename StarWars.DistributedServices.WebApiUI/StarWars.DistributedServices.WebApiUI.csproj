@@ -7,11 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\StarWars.Infrastructure.Contracts\StarWars.Infrastructure.Contracts.csproj" />
+    <ProjectReference Include="..\StarWars.Infrastructure.Impl\StarWars.Infrastructure.Impl.csproj" />
+    <ProjectReference Include="..\StarWars.Library.Contracts\StarWars.Library.Contracts.csproj" />
+    <ProjectReference Include="..\StarWars.Library.Impl\StarWars.Library.Impl.csproj" />
   </ItemGroup>
 
 </Project>

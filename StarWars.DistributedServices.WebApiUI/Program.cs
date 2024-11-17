@@ -1,3 +1,10 @@
+using Microsoft.EntityFrameworkCore;
+using StarWars.Infrastructure.Contracts;
+using StarWars.Infrastructure.Impl;
+using StarWars.Infrastructure.Impl.DbContext;
+using StarWars.Library.Contracts;
+using StarWars.Library.Impl;
+
 namespace StarWars.DistributedServices.WebApiUI
 {
     public class Program
@@ -8,7 +15,16 @@ namespace StarWars.DistributedServices.WebApiUI
 
             // Add services to the container.
 
-            builder.Services.AddControllers();
+            builder.Services
+              .AddScoped<IPlanetsRepository, PlanetsRepository>()
+              .AddScoped<IPlanetsService, PlanetsService>();
+
+            builder.Services.AddDbContext<SWDBContext>(options =>
+            options.UseSqlServer("Data Source=074BCN2024\\SQLEXPRESS;Initial Catalog=SWDB;User ID=adria;Password=1234;Trust Server Certificate=True"));
+
+            builder.Services.AddControllers().AddNewtonsoftJson(options =>
+    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();

@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarWars.Infrastructure.Imp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarWars.XCutting.Enums", "StarWars.XCutting.Enums\StarWars.XCutting.Enums.csproj", "{33F09B09-06B8-4914-A525-81662420CD62}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarWars.Tests.Library.Impl", "StarWars.Tests.Library.Impl\StarWars.Tests.Library.Impl.csproj", "{5E0E86DA-3F11-4FE3-B18E-1F47A87D154B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{33F09B09-06B8-4914-A525-81662420CD62}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33F09B09-06B8-4914-A525-81662420CD62}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33F09B09-06B8-4914-A525-81662420CD62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E0E86DA-3F11-4FE3-B18E-1F47A87D154B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E0E86DA-3F11-4FE3-B18E-1F47A87D154B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E0E86DA-3F11-4FE3-B18E-1F47A87D154B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E0E86DA-3F11-4FE3-B18E-1F47A87D154B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -75,6 +81,7 @@ Global
 		{0F7580A3-9C60-4D14-8645-92AFB7CC4AC2} = {1F3CB198-F6C6-412A-84AA-2DD3ED6F6DDC}
 		{99637239-B675-4EA6-BB29-24B08005FFC1} = {1F3CB198-F6C6-412A-84AA-2DD3ED6F6DDC}
 		{33F09B09-06B8-4914-A525-81662420CD62} = {88BA271D-81A5-439F-B4D7-BB6185DD4CEA}
+		{5E0E86DA-3F11-4FE3-B18E-1F47A87D154B} = {3F340766-2738-41E1-83C1-F976BF5E11E2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8C91B95F-A0D8-48C7-9FA4-C58B02F88BDD}

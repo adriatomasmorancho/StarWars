@@ -23,5 +23,23 @@ namespace StarWars.Infrastructure.Impl
 
             return dataDeserialized.Data ?? new List<PlanetSWApiEntity>();
         }
+
+        public async Task<PlanetResidentListSWApiEntity?> TryGetPlanetResidentListByPlanetUrl(string url)
+        {
+            using HttpClient client = new();
+
+
+            HttpResponseMessage dataFromWebApi = await client.GetAsync(url);
+            string dataAsString = await dataFromWebApi.Content.ReadAsStringAsync();
+
+            JsonSerializerOptions deserializerOptions = new()
+            {
+                PropertyNameCaseInsensitive = true,
+                NumberHandling = JsonNumberHandling.AllowReadingFromString
+            };
+            PlanetResidentListSWApiEntity? dataDeserialized = JsonSerializer.Deserialize<PlanetResidentListSWApiEntity?>(dataAsString, deserializerOptions);
+
+            return dataDeserialized;
+        }
     }
 }

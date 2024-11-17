@@ -6,5 +6,7 @@ namespace StarWars.Infrastructure.Contracts
     {
         Task<List<PlanetSWApiEntity>> GetAll();
 
+        Task<PlanetResidentListSWApiEntity?> TryGetPlanetResidentListByPlanetUrl(string url);
+
     }
 }

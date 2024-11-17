@@ -10,5 +10,7 @@ namespace StarWars.Infrastructure.Contracts
     public interface IPlanetsDBRepository
     {
         void InsertOrUpdate(List<Planet> dbEntityList);
+
+        Planet? TryGet(string planetName);
     }
 }

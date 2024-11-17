@@ -16,9 +16,11 @@ namespace StarWars.DistributedServices.WebApiUI
             // Add services to the container.
 
             builder.Services
+               .AddScoped<IPeopleApiRepository, PeopleApiRepository>()
               .AddScoped<IPlanetsDBRepository, PlanetsDBRepository>()
               .AddScoped<IPlanetsApiRepository, PlanetsApiRepository>()
-              .AddScoped<IPlanetsService, PlanetsService>();
+              .AddScoped<IPlanetsService, PlanetsService>()
+              .AddScoped<IResidentsService, ResidentsService>();
 
             builder.Services.AddDbContext<SWDBContext>(options =>
             options.UseSqlServer("Data Source=074BCN2024\\SQLEXPRESS;Initial Catalog=SWDB;User ID=adria;Password=1234;Trust Server Certificate=True"));

@@ -38,5 +38,10 @@ namespace StarWars.Infrastructure.Impl
             }
             _swdbContext.SaveChanges();
         }
+
+        public Planet? TryGet(string planetName)
+        {
+            return _swdbContext.Planets.FirstOrDefault(x => x.NombrePlaneta == planetName);
+        }
     }
 }

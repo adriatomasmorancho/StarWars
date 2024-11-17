@@ -16,7 +16,8 @@ namespace StarWars.DistributedServices.WebApiUI
             // Add services to the container.
 
             builder.Services
-              .AddScoped<IPlanetsRepository, PlanetsRepository>()
+              .AddScoped<IPlanetsDBRepository, PlanetsDBRepository>()
+              .AddScoped<IPlanetsApiRepository, PlanetsApiRepository>()
               .AddScoped<IPlanetsService, PlanetsService>();
 
             builder.Services.AddDbContext<SWDBContext>(options =>

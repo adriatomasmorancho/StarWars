@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\StarWars.Infrastructure.Contracts\StarWars.Infrastructure.Contracts.csproj" />
     <ProjectReference Include="..\StarWars.Library.Contracts\StarWars.Library.Contracts.csproj" />
   </ItemGroup>
 
